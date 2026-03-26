@@ -1,0 +1,46 @@
+<section class="public-api-page">
+  <div class="page-header">
+    <div>
+      <h1>Consumo de API pública</h1>
+      <p class="page-subtitle">
+        Usuarios obtenidos desde jsonplaceholder
+      </p>
+    </div>
+  </div>
+
+  <div class="api-card">
+    <div class="api-card-header">
+      <div>
+        <h2>Listado de usuarios</h2>
+        <p>{{ users.length }} usuarios cargados</p>
+      </div>
+    </div>
+
+    <div class="users-grid" *ngIf="users.length > 0; else emptyUsers">
+      <div class="user-card" *ngFor="let user of users">
+        <div class="user-top">
+          <div class="avatar">
+            {{ user.name.charAt(0) }}
+          </div>
+
+          <div class="user-main">
+            <h3>{{ user.name }}</h3>
+
+          </div>
+        </div>
+
+        <div class="user-info">
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #emptyUsers>
+      <div class="empty-state">
+        <h3>No hay usuarios para mostrar</h3>
+        <p>No se pudieron cargar datos desde la API pública.</p>
+      </div>
+    </ng-template>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div>
+        <h2>Task Manager</h2>
+        <p>Panel de organización</p>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a class="menu-item" routerLink="/tasks" routerLinkActive="active">Tareas</a>
+      <a class="menu-item" routerLink="/public-api" routerLinkActive="active">Public API</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Proyecto Angular + Node + MySQL</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
